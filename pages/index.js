@@ -6,7 +6,7 @@ import Testimonials from '@/features/Home/components/Testimonials';
 import { getProperties } from '@/features/common/Api/getProperties';
 
 
-export default function Home({ featuredProperties }) {
+const Home = () => {
   return (
     <DefaultLayout>
       <HeroBanner />
@@ -17,9 +17,4 @@ export default function Home({ featuredProperties }) {
   );
 }
 
-export async function getStaticProps() {
-  const properties = await getProperties(6);
-  return {
-    props: { featuredProperties: properties }
-  };
-}
+export default Home;
